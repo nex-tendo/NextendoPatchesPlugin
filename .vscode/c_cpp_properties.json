@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "WiiU",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/devkitPro/devkitPPC/powerpc-eabi/include",
+                "C:/devkitPro/portlibs/ppc/include",
+                "C:/devkitPro/wut/include",
+                "C:/Users/mioch/Documents/Nextendo/wiiu_patches/src"
+            ],
+            "defines": [
+                "_WIIU",
+                "__WUT__"
+            ],
+            "compilerPath": "C:/devkitPro/devkitPPC/bin/powerpc-eabi-gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x86"
+        }
+    ],
+    "version": 4
+}

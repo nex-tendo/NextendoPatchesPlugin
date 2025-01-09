@@ -1,0 +1,4 @@
+*.elf
+*.wps
+/build
+build.bat
