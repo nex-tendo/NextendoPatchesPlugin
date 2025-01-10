@@ -6,6 +6,7 @@
 #include "utils.hpp"
 #include "patchs/act.hpp"
 #include "patchs/shop.hpp"
+#include "patchs/ssl.hpp"
 
 WUPS_PLUGIN_NAME("Nextendo Network Patcher");
 WUPS_PLUGIN_DESCRIPTION("Nextendo Network Patcher");
@@ -19,6 +20,7 @@ INITIALIZE_PLUGIN() {
 
     PatchAct();
     PatchShop();
+    PatchSSL();
 }
 
 DEINITIALIZE_PLUGIN() {
