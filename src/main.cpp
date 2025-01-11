@@ -4,53 +4,34 @@
 #include <whb/log_cafe.h>
 
 #include "utils.hpp"
+#include "plugin.hpp"
+#include "version.h"
 #include "patchs/act.hpp"
 #include "patchs/shop.hpp"
 #include "patchs/ssl.hpp"
 
-WUPS_PLUGIN_NAME("Nextendo Network Patcher");
-WUPS_PLUGIN_DESCRIPTION("Nextendo Network Patcher");
-WUPS_PLUGIN_VERSION("v1.0");
-WUPS_PLUGIN_AUTHOR("cedkeChat01");
-WUPS_PLUGIN_LICENSE("MIT");
+WUPS_PLUGIN_NAME(PATCHER_NAME);
+WUPS_PLUGIN_DESCRIPTION(PATCHER_DESCRIPTION);
+WUPS_PLUGIN_VERSION(PATCHER_VERSION);
+WUPS_PLUGIN_AUTHOR(PATCHER_AUTHOR);
+WUPS_PLUGIN_LICENSE(PATCHER_LICENSE);
 
-WUPS_USE_STORAGE("Nextendo Patcher");
-
-static bool patches = false;
-static bool prevValue = false;
+WUPS_USE_WUT_DEVOPTAB();
+WUPS_USE_STORAGE(PATCHER_LICENSE);
 
 INITIALIZE_PLUGIN() {
     WHBLogUdpInit();
     WHBLogCafeInit();
 
-    WUPSStorageError storageRes = WUPS_OpenStorage();
-    if (storageRes != WUPS_STORAGE_ERROR_SUCCESS) {
-        WHBLogPrintf("Failed to open storage %s (%d)", WUPS_GetStorageStatusStr(storageRes), storageRes);
-    }
-    else {
-        if ((storageRes = WUPS_StoreBool(nullptr, "patches", &patches)) == WUPS_STORAGE_ERROR_NOT_FOUND) {
-            if (WUPS_StoreBool(nullptr, "patches", patches) != WUPS_STORAGE_ERROR_SUCCESS) {
-                WHBLogPrintf("Failed to store bool");
-            }
-        }
-        else if (storageRes != WUPS_STORAGE_ERROR_SUCCESS) {
-            WHBLogPrintf("Failed to get bool %s (%d)", WUPS_GetStorageStatusStr(storageRes), storageRes);
-        }
+    PluginConfig::PluginInit();
 
-        prevValue = patches;
-
-        if (WUPS_CloseStorage() != WUPS_STORAGE_ERROR_SUCCESS) {
-            WHBLogPrintf("Failed to close storage");
-        }
-    }
-
-    if (patches) {
+    if (PluginConfig::connected) {
         PatchAct();
         PatchShop();
         PatchSSL();
         WHBLogPrintf("Patches applying successfully!");
     } else {
-        WHBLogPrintf("Patches removing successfully!");
+        WHBLogPrintf("Patches unapplying successfully!");
     }
 }
 
@@ -61,9 +42,9 @@ DEINITIALIZE_PLUGIN() {
 
 ON_APPLICATION_START() {
     WHBLogUdpInit();
-    WHBLogPrintf("Patcher starting..");
+    WHBLogPrintf("Nextendo Patcher starting..");
 }
 
 ON_APPLICATION_ENDS() {
-    WHBLogPrintf("Patcher ending..");
+    WHBLogPrintf("Nextendo Patcher ending..");
 }
