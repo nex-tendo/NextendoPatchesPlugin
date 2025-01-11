@@ -9,8 +9,6 @@
 class PluginConfig {
 public:
     static void PluginInit(void);
-
-private:
     static bool connected;
     static bool restart;
 };

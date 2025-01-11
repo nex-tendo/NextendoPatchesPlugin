@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "WiiU",
+            "name": "Wii U",
             "includePath": [
                 "${workspaceFolder}/**",
                 "C:/devkitPro/devkitPPC/powerpc-eabi/include",

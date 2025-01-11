@@ -22,6 +22,7 @@ WUPS_USE_STORAGE(PATCHER_LICENSE);
 INITIALIZE_PLUGIN() {
     WHBLogUdpInit();
     WHBLogCafeInit();
+    Mocha_InitLibrary();
 
     PluginConfig::PluginInit();
 
@@ -38,6 +39,7 @@ INITIALIZE_PLUGIN() {
 DEINITIALIZE_PLUGIN() {
     WHBLogUdpDeinit();
     WHBLogCafeDeinit();
+    Mocha_DeInitLibrary();
 }
 
 ON_APPLICATION_START() {
