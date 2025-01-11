@@ -28,5 +28,5 @@ void PatchSSL() {
 
     WHBLogPrintf("NoSSL Patch applied successfully!");
 
-    // MCP_Close(mcp_handle);
+    MCP_Close(mcp_handle);
 }

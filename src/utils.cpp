@@ -1,5 +1,6 @@
 #include "utils.hpp"
 
+// Thanks GaryOrderNichts
 void write_string(uint32_t addr, const char *str) {
     int len = strlen(str) + 1;
     int remaining = len % 4;
