@@ -1,4 +1,5 @@
 *.elf
 *.wps
+*.lst
 /build
 build.bat

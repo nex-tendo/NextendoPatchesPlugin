@@ -1,9 +1,19 @@
 # NextendoPatchesPlugin
-- It's a patcher plugin for connect to Nextendo Network Server for Wii U, for use this you need Aroma (Tiramisu is not supported).
+- It's a patcher plugin for connect to Nextendo Network Server on your Wii U.
+- Need Aroma (TIRAMISU IS NOT SUPPORTED !!).
 
 # Build
-- For build the Wii U Patcher Aroma you need DevkitPro with Wii U Packages.
-- With wut (Wii U Toolchain) and wups (Wii U Plugin System).
+## Requirements
+- Need DevkitPro with wiiu-dev packages: `pacman -Syu wiiu-dev`.
+- [Wii U Plugin System (WUPS)](https://github.com/wiiu-env/WiiUPluginSystem)
+- [Wii U Module System (WUMS)](https://github.com/wiiu-env/WiiUModuleSystem)
+- [libkernel](https://github.com/wiiu-env/libkernel)
+- [libnotifications](https://github.com/wiiu-env/libnotifications)
+- [libfunctionpatcher](https://github.com/wiiu-env/libfunctionpatcher)
+
+## Compile
+- For compile do `make`.
+- For clean do `make clean`.
 
 # Credits
 - Maschell for plugin system example.
