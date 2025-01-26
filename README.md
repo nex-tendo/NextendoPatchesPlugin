@@ -1,6 +1,6 @@
 # NextendoPatchesPlugin
-- It's a patcher plugin for connect to Nextendo Network Server on your Wii U.
-- Need Aroma (TIRAMISU IS NOT SUPPORTED !!).
+### It's a patcher plugin for connect to Nextendo Network Server on your Wii U.
+### Need Aroma (TIRAMISU IS NOT SUPPORTED !!).
 
 # Build
 ## Requirements
