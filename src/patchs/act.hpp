@@ -1,8 +1,8 @@
 #ifndef ACT_HPP
 #define ACT_HPP
 
-#include "../utils.hpp"
 #include <whb/log.h>
+#include "utils.hpp"
 
 void PatchAct();
 

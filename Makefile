@@ -23,7 +23,7 @@ TARGET		:=	wiiu_patches
 BUILD		:=	build
 SOURCES		:=	src src/patchs
 DATA		:=	data
-INCLUDES	:=	includesrc src/patchs
+INCLUDES 	:= src src/patchs
 #DEBUG		:=	1
 
 #-------------------------------------------------------------------------------
